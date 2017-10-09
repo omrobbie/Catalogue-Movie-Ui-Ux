@@ -5,4 +5,13 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="def_spacing">8dp</dimen>
+    <dimen name="def_clear_space">16dp</dimen>
+    <dimen name="def_large_clear_space">32dp</dimen>
+
+    <dimen name="img_poster_154_width">154dp</dimen>
+    <dimen name="img_poster_154_height">231dp</dimen>
+    <dimen name="img_poster_92_width">92dp</dimen>
+    <dimen name="img_poster_92_height">138dp</dimen>
 </resources>

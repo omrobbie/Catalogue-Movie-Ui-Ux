@@ -1,8 +1,11 @@
-package com.omrobbie.cataloguemovieuiux.tabs;
+package com.omrobbie.cataloguemovieuiux.util;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.omrobbie.cataloguemovieuiux.feature.now_playing.NowPlayingFragment;
+import com.omrobbie.cataloguemovieuiux.feature.upcoming.UpcomingFragment;
 
 /**
  * Created by omrobbie on 09/10/2017.
@@ -28,7 +31,7 @@ public class ATabPager extends FragmentPagerAdapter {
                 return new NowPlayingFragment();
 
             case 1:
-                return new UpComingFragment();
+                return new UpcomingFragment();
 
             default:
                 return null;
