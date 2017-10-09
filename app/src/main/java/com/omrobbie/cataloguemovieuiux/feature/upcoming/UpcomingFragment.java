@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.tabs;
+package com.omrobbie.cataloguemovieuiux.feature.upcoming;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.omrobbie.cataloguemovieuiux.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NowPlayingFragment extends Fragment {
+public class UpcomingFragment extends Fragment {
 
 
-    public NowPlayingFragment() {
+    public UpcomingFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class NowPlayingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_now_playing, container, false);
+        return inflater.inflate(R.layout.fragment_upcoming, container, false);
     }
 
 }

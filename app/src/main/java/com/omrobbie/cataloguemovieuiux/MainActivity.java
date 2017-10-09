@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.omrobbie.cataloguemovieuiux.tabs.ATabPager;
+import com.omrobbie.cataloguemovieuiux.util.ATabPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
