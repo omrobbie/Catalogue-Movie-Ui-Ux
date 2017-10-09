@@ -2,11 +2,13 @@ package com.omrobbie.cataloguemovieuiux.api;
 
 import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.NowPlayingModel;
+import com.omrobbie.cataloguemovieuiux.model.search.SearchModel;
 import com.omrobbie.cataloguemovieuiux.model.upcoming.UpcomingModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by omrobbie on 09/10/2017.
@@ -21,5 +23,8 @@ public interface APICall {
     Call<DetailModel> getDetailMovie(@Path("movie_id") String movie_id);
 
     @GET("movie/upcoming")
-    Call<UpcomingModel> getUpcoming();
+    Call<UpcomingModel> getUpcomingMovie();
+
+    @GET("search/movie")
+    Call<SearchModel> getSearchMovie(@Query("query") String query);
 }

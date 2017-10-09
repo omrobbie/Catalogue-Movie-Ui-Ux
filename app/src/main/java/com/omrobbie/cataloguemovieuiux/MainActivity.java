@@ -1,5 +1,6 @@
 package com.omrobbie.cataloguemovieuiux;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -12,8 +13,8 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.omrobbie.cataloguemovieuiux.feature.search.SearchActivity;
 import com.omrobbie.cataloguemovieuiux.util.ATabPager;
 
 import butterknife.BindView;
@@ -68,7 +69,10 @@ public class MainActivity extends AppCompatActivity
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(MainActivity.this, "Searching: " + query, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra(SearchActivity.MOVIE_TITLE, query);
+                startActivity(intent);
+
                 return false;
             }
 

@@ -71,7 +71,7 @@ public class UpcomingFragment extends Fragment {
     }
 
     private void loadData() {
-        apiCall = apiClient.getService().getUpcoming();
+        apiCall = apiClient.getService().getUpcomingMovie();
         apiCall.enqueue(new Callback<UpcomingModel>() {
             @Override
             public void onResponse(Call<UpcomingModel> call, Response<UpcomingModel> response) {
