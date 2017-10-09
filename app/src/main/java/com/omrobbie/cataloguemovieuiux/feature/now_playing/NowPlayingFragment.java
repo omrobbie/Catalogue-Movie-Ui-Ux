@@ -9,16 +9,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.omrobbie.cataloguemovieuiux.R;
-import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.omrobbie.cataloguemovieuiux.api.APIClient;
+import com.omrobbie.cataloguemovieuiux.model.now_playing.NowPlayingModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,7 +35,8 @@ public class NowPlayingFragment extends Fragment {
 
     private NowPlayingAdapter adapter;
 
-    private List<ResultsItem> list = new ArrayList<>();
+    private Call<NowPlayingModel> apiCall;
+    private APIClient apiClient = new APIClient();
 
     public NowPlayingFragment() {
         // Required empty public constructor
@@ -49,7 +52,7 @@ public class NowPlayingFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         setupList();
-        loadDummyData();
+        loadData();
 
         return view;
     }
@@ -58,6 +61,7 @@ public class NowPlayingFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        if (apiCall != null) apiCall.cancel();
     }
 
     private void setupList() {
@@ -66,16 +70,24 @@ public class NowPlayingFragment extends Fragment {
         rv_now_playing.setAdapter(adapter);
     }
 
-    private void loadDummyData() {
-        list.clear();
-        for (int i = 0; i <= 10; i++) {
-            ResultsItem item = new ResultsItem();
-            item.setPosterPath("/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg");
-            item.setTitle("This is very very very long movie title that you can read " + i);
-            item.setOverview("This is very very very long movie overview that you can read " + i);
-            item.setReleaseDate("2016-04-1" + i);
-            list.add(item);
-        }
-        adapter.replaceAll(list);
+    private void loadData() {
+        apiCall = apiClient.getService().getNowPlayingMovie();
+        apiCall.enqueue(new Callback<NowPlayingModel>() {
+            @Override
+            public void onResponse(Call<NowPlayingModel> call, Response<NowPlayingModel> response) {
+                if (response.isSuccessful()) {
+                    adapter.replaceAll(response.body().getResults());
+                } else loadFailed();
+            }
+
+            @Override
+            public void onFailure(Call<NowPlayingModel> call, Throwable t) {
+                loadFailed();
+            }
+        });
+    }
+
+    private void loadFailed() {
+        Toast.makeText(context, R.string.err_load_failed, Toast.LENGTH_SHORT).show();
     }
 }

@@ -9,6 +9,8 @@
     <string name="now_playing">Now Playing</string>
     <string name="upcoming">Upcoming</string>
 
+    <string name="err_load_failed">Failed to load data.\nPlease check your Internet connections!</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
