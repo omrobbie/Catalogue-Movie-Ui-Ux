@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.BuildConfig;
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
@@ -62,6 +63,7 @@ class NowPlayingViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(itemView.getContext(), NowPlayingDetailActivity.class);
+                intent.putExtra(NowPlayingDetailActivity.MOVIE_ITEM, new Gson().toJson(item));
                 itemView.getContext().startActivity(intent);
             }
         });
