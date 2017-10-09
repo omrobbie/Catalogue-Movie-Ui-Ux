@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -62,7 +61,8 @@ class NowPlayingViewHolder extends RecyclerView.ViewHolder {
         btn_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Button Detail Clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(itemView.getContext(), NowPlayingDetailActivity.class);
+                itemView.getContext().startActivity(intent);
             }
         });
 

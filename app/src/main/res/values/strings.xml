@@ -11,6 +11,17 @@
 
     <string name="err_load_failed">Failed to load data.\nPlease check your Internet connections!</string>
 
+    <string name="label_release_date">Release Date</string>
+    <string name="label_vote">Vote Average:</string>
+    <string name="label_genres">Movie Genres</string>
+    <string name="label_overview">Overview</string>
+    <string name="label_production_details">Production Details</string>
+    <string name="label_belongs">Belongs To Collection</string>
+    <string name="label_budget">Budget</string>
+    <string name="label_revenue">Revenue</string>
+    <string name="label_companies">Companies</string>
+    <string name="label_countries">Countries</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

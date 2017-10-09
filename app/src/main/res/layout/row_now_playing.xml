@@ -19,8 +19,8 @@
 
             <ImageView
                 android:id="@+id/img_poster"
-                android:layout_width="@dimen/img_poster_width"
-                android:layout_height="@dimen/img_poster_height"
+                android:layout_width="@dimen/img_poster_154_width"
+                android:layout_height="@dimen/img_poster_154_height"
                 android:scaleType="centerCrop"
                 android:src="@drawable/placeholder" />
 
