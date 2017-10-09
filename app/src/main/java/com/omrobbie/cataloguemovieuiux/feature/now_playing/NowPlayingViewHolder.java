@@ -1,5 +1,6 @@
 package com.omrobbie.cataloguemovieuiux.feature.now_playing;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -46,7 +47,7 @@ class NowPlayingViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    public void bind(ResultsItem item) {
+    public void bind(final ResultsItem item) {
         tv_title.setText(item.getTitle());
         tv_overview.setText(item.getOverview());
         tv_release_date.setText(DateTime.getLongDate(item.getReleaseDate()));
@@ -68,7 +69,12 @@ class NowPlayingViewHolder extends RecyclerView.ViewHolder {
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Button Share Clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, item.getTitle());
+                intent.putExtra(Intent.EXTRA_SUBJECT, item.getTitle());
+                intent.putExtra(Intent.EXTRA_TEXT, item.getTitle() + "\n\n" + item.getOverview());
+                itemView.getContext().startActivity(Intent.createChooser(intent, "Share"));
             }
         });
     }
