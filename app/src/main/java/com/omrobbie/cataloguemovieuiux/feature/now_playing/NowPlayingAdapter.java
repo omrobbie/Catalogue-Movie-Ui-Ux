@@ -62,7 +62,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingViewHolder
     public NowPlayingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new NowPlayingViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.row_now_playing, parent, false
+                        R.layout.activity_detail_item, parent, false
                 )
         );
     }

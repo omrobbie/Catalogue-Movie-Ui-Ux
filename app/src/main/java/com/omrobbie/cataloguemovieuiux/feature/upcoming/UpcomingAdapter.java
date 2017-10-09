@@ -61,7 +61,7 @@ public class UpcomingAdapter  extends RecyclerView.Adapter<UpcomingViewHolder> {
     public UpcomingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new UpcomingViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.row_now_playing, parent, false
+                        R.layout.activity_detail_item, parent, false
                 )
         );
     }

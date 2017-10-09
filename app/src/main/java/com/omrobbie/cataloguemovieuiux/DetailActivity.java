@@ -102,6 +102,12 @@ public class DetailActivity extends AppCompatActivity {
         loadData(movie_item);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (apiCall != null) apiCall.cancel();
+    }
+
     private void loadData(String movie_item) {
         ResultsItem item = gson.fromJson(movie_item, ResultsItem.class);
         loadDataInServer(String.valueOf(item.getId()));
