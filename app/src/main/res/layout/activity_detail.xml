@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.omrobbie.cataloguemovieuiux.feature.now_playing.NowPlayingDetailActivity">
+    tools:context="com.omrobbie.cataloguemovieuiux.DetailActivity">
 
     <include layout="@layout/detail_appbar" />
 

@@ -2,6 +2,7 @@ package com.omrobbie.cataloguemovieuiux.api;
 
 import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.NowPlayingModel;
+import com.omrobbie.cataloguemovieuiux.model.upcoming.UpcomingModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -18,4 +19,7 @@ public interface APICall {
 
     @GET("movie/{movie_id}")
     Call<DetailModel> getDetailMovie(@Path("movie_id") String movie_id);
+
+    @GET("movie/upcoming")
+    Call<UpcomingModel> getUpcoming();
 }

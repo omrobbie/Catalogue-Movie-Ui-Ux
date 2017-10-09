@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.now_playing;
+package com.omrobbie.cataloguemovieuiux.feature.upcoming;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +11,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.BuildConfig;
-import com.omrobbie.cataloguemovieuiux.DetailActivity;
 import com.omrobbie.cataloguemovieuiux.R;
-import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.DetailActivity;
+import com.omrobbie.cataloguemovieuiux.model.upcoming.ResultsItem;
 import com.omrobbie.cataloguemovieuiux.util.DateTime;
 
 import butterknife.BindView;
@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  * Created by omrobbie on 09/10/2017.
  */
 
-class NowPlayingViewHolder extends RecyclerView.ViewHolder {
+public class UpcomingViewHolder  extends RecyclerView.ViewHolder {
 
     @BindView(R.id.img_poster)
     ImageView img_poster;
@@ -43,7 +43,7 @@ class NowPlayingViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.btn_share)
     Button btn_share;
 
-    public NowPlayingViewHolder(View itemView) {
+    public UpcomingViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }

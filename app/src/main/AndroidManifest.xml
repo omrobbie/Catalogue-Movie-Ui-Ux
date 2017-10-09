@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.now_playing.NowPlayingDetailActivity"
+            android:name=".DetailActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

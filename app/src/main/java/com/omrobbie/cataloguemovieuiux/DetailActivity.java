@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.now_playing;
+package com.omrobbie.cataloguemovieuiux;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.omrobbie.cataloguemovieuiux.BuildConfig;
-import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
@@ -27,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NowPlayingDetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     public static final String MOVIE_ITEM = "movie_item";
 
@@ -92,7 +90,7 @@ public class NowPlayingDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_now_playing_detail);
+        setContentView(R.layout.activity_detail);
 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
@@ -155,7 +153,7 @@ public class NowPlayingDetailActivity extends AppCompatActivity {
                     tv_genres.setText(genres);
 
                     if (item.getBelongsToCollection() != null) {
-                        Glide.with(NowPlayingDetailActivity.this)
+                        Glide.with(DetailActivity.this)
                                 .load(BuildConfig.BASE_URL_IMG + "w92" + item.getBelongsToCollection().getPosterPath())
                                 .into(img_poster_belongs);
 
