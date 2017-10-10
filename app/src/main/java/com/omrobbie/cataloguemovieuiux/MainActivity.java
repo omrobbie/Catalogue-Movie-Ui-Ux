@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.omrobbie.cataloguemovieuiux.feature.search.SearchActivity;
+import com.omrobbie.cataloguemovieuiux.feature.settings.SettingsActivity;
 import com.omrobbie.cataloguemovieuiux.util.ATabPager;
 
 import butterknife.BindView;
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
