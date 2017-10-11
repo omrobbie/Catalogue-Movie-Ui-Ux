@@ -28,6 +28,7 @@ ext {
     retrofitVersion = "2.3.0"
     glideVersion = "4.0.0"
     gcmVersion = "9.6.1"
+    circleImageViewVersion = "2.2.0"
 }
 
 dependencies {
@@ -49,6 +50,8 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 
     compile "com.google.android.gms:play-services-gcm:$gcmVersion"
+
+    compile "de.hdodenhof:circleimageview:$circleImageViewVersion"
 
     testCompile 'junit:junit:4.12'
 }
