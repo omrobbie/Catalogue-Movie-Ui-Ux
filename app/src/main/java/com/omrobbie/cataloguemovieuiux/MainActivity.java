@@ -22,7 +22,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        TabLayout.OnTabSelectedListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity
 
         setupDrawer();
         setupTab();
+
+        selectNav(0);
     }
 
     @Override
@@ -110,14 +113,42 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        }
+        if (id == R.id.nav_now_playing) selectTab(0);
+        if (id == R.id.nav_upcoming) selectTab(1);
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * Called when a tab enters the selected state.
+     *
+     * @param tab The tab that was selected
+     */
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        selectNav(tab.getPosition());
+    }
+
+    /**
+     * Called when a tab exits the selected state.
+     *
+     * @param tab The tab that was unselected
+     */
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    /**
+     * Called when a tab that is already selected is chosen again by the user. Some applications
+     * may use this action to return to the top level of a category.
+     *
+     * @param tab The tab that was reselected.
+     */
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
     }
 
     private void setupDrawer() {
@@ -134,5 +165,14 @@ public class MainActivity extends AppCompatActivity
 
         tabLayout.getTabAt(0).setText(R.string.label_now_playing);
         tabLayout.getTabAt(1).setText(R.string.label_upcoming);
+        tabLayout.setOnTabSelectedListener(this);
+    }
+
+    private void selectNav(int navNumber) {
+        navigationView.getMenu().getItem(navNumber).setChecked(true);
+    }
+
+    private void selectTab(int tabNumber) {
+        tabLayout.getTabAt(tabNumber).select();
     }
 }
