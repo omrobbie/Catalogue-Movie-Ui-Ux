@@ -19,6 +19,7 @@ import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.upcoming.ResultsItem;
 import com.omrobbie.cataloguemovieuiux.model.upcoming.UpcomingModel;
+import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import java.util.List;
 import java.util.Random;
@@ -46,7 +47,7 @@ public class SchedulerService extends GcmTaskService {
     }
 
     private void loadData() {
-        apiCall = apiClient.getService().getUpcomingMovie();
+        apiCall = apiClient.getService().getUpcomingMovie(Language.getCountry());
         apiCall.enqueue(new Callback<UpcomingModel>() {
             @Override
             public void onResponse(Call<UpcomingModel> call, Response<UpcomingModel> response) {

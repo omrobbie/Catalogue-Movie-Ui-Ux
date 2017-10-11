@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Notification">
+    <PreferenceCategory android:title="@string/action_notification">
 
         <SwitchPreference
             android:defaultValue="false"
@@ -16,7 +16,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Settings">
+    <PreferenceCategory android:title="@string/action_settings">
 
         <Preference
             android:key="@string/key_setting_locale"

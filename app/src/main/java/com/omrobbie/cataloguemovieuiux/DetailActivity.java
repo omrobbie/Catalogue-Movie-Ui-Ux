@@ -15,6 +15,7 @@ import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
 import com.omrobbie.cataloguemovieuiux.util.DateTime;
+import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -155,7 +156,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void loadDataInServer(String movie_item) {
-        apiCall = apiClient.getService().getDetailMovie(movie_item);
+        apiCall = apiClient.getService().getDetailMovie(movie_item, Language.getCountry());
         apiCall.enqueue(new Callback<DetailModel>() {
             @Override
             public void onResponse(Call<DetailModel> call, Response<DetailModel> response) {

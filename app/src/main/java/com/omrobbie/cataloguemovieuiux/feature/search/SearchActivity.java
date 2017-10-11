@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.search.SearchModel;
+import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,7 +55,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void loadData(String movie_title) {
-        apiCall = apiClient.getService().getSearchMovie(movie_title);
+        apiCall = apiClient.getService().getSearchMovie(movie_title, Language.getCountry());
         apiCall.enqueue(new Callback<SearchModel>() {
             @Override
             public void onResponse(Call<SearchModel> call, Response<SearchModel> response) {

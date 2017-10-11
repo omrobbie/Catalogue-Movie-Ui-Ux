@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.now_playing.NowPlayingModel;
+import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,7 +72,7 @@ public class NowPlayingFragment extends Fragment {
     }
 
     private void loadData() {
-        apiCall = apiClient.getService().getNowPlayingMovie();
+        apiCall = apiClient.getService().getNowPlayingMovie(Language.getCountry());
         apiCall.enqueue(new Callback<NowPlayingModel>() {
             @Override
             public void onResponse(Call<NowPlayingModel> call, Response<NowPlayingModel> response) {

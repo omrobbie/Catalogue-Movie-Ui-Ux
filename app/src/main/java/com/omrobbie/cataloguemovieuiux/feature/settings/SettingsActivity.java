@@ -12,6 +12,8 @@ import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.util.AlarmReceiver;
 import com.omrobbie.cataloguemovieuiux.util.upcoming.SchedulerTask;
 
+import java.util.Locale;
+
 import butterknife.BindString;
 import butterknife.ButterKnife;
 

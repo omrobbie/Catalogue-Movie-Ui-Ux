@@ -17,14 +17,14 @@ import retrofit2.http.Query;
 public interface APICall {
 
     @GET("movie/now_playing")
-    Call<NowPlayingModel> getNowPlayingMovie();
+    Call<NowPlayingModel> getNowPlayingMovie(@Query("language") String language);
 
     @GET("movie/{movie_id}")
-    Call<DetailModel> getDetailMovie(@Path("movie_id") String movie_id);
+    Call<DetailModel> getDetailMovie(@Path("movie_id") String movie_id, @Query("language") String language);
 
     @GET("movie/upcoming")
-    Call<UpcomingModel> getUpcomingMovie();
+    Call<UpcomingModel> getUpcomingMovie(@Query("language") String language);
 
     @GET("search/movie")
-    Call<SearchModel> getSearchMovie(@Query("query") String query);
+    Call<SearchModel> getSearchMovie(@Query("query") String query, @Query("language") String language);
 }

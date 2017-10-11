@@ -1,0 +1,25 @@
+package com.omrobbie.cataloguemovieuiux.util;
+
+import java.util.Locale;
+
+/**
+ * Created by omrobbie on 11/10/2017.
+ */
+
+public class Language {
+
+    public static String getCountry() {
+        String country = Locale.getDefault().getCountry().toLowerCase();
+
+        switch (country) {
+            case "id":
+                break;
+
+            default:
+                country = "en";
+                break;
+        }
+
+        return country;
+    }
+}
