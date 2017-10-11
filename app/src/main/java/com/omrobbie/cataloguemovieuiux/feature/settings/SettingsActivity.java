@@ -7,11 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.omrobbie.cataloguemovieuiux.R;
+import com.omrobbie.cataloguemovieuiux.util.AlarmReceiver;
+import com.omrobbie.cataloguemovieuiux.util.upcoming.SchedulerTask;
 
 import butterknife.BindString;
 import butterknife.ButterKnife;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    private AlarmReceiver alarmReceiver = new AlarmReceiver();
+    private SchedulerTask schedulerTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,8 @@ public class SettingsActivity extends AppCompatActivity {
             findPreference(reminder_daily).setOnPreferenceChangeListener(this);
             findPreference(reminder_upcoming).setOnPreferenceChangeListener(this);
             findPreference(setting_locale).setOnPreferenceClickListener(this);
+
+            schedulerTask = new SchedulerTask(getActivity());
         }
 
         @Override
@@ -57,12 +64,22 @@ public class SettingsActivity extends AppCompatActivity {
             boolean isOn = (boolean) o;
 
             if (key.equals(reminder_daily)) {
+                if (isOn) {
+                    alarmReceiver.setRepeatingAlarm(getActivity(), alarmReceiver.TYPE_REPEATING, "07:00", "Good morning! Ready to pick your new movies today?");
+                } else {
+                    alarmReceiver.cancelAlarm(getActivity(), alarmReceiver.TYPE_REPEATING);
+                }
+
                 Toast.makeText(SettingsActivity.this, "Daily Reminder Notification is now " + (isOn ? "activated!" : "deactivated!"), Toast.LENGTH_SHORT).show();
                 return true;
             }
 
             if (key.equals(reminder_upcoming)) {
-                Toast.makeText(SettingsActivity.this, "Daily Reminder Notification is now " + (isOn ? "activated!" : "deactivated!"), Toast.LENGTH_SHORT).show();
+                if (isOn) {
+                    schedulerTask.createPeriodicTask();
+                } else schedulerTask.cancelPeriodicTask();
+
+                Toast.makeText(SettingsActivity.this, "Upcoming Reminder Notification is now " + (isOn ? "activated!" : "deactivated!"), Toast.LENGTH_SHORT).show();
                 return true;
             }
 

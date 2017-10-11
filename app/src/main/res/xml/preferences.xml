@@ -3,13 +3,13 @@
     <PreferenceCategory android:title="Notification">
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/key_reminder_daily"
             android:summary="Turn on/off daily reminder"
             android:title="Daily Reminder Notification" />
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/key_reminder_upcoming"
             android:summary="Turn on/off upcoming reminder"
             android:title="Upcoming Reminder Notification" />
