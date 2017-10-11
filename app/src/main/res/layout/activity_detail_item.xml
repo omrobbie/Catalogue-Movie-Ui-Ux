@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:backgroundTint="@color/colorAccent"
-                        android:text="Detail"
+                        android:text="@string/label_detail"
                         android:textColor="@android:color/white" />
 
                     <Button
@@ -69,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:backgroundTint="@color/colorAccent"
-                        android:text="Share"
+                        android:text="@string/label_share"
                         android:textColor="@android:color/white" />
 
                 </LinearLayout>

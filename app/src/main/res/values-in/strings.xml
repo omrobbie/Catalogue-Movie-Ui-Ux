@@ -1,0 +1,41 @@
+<resources>
+    <string name="action_settings">Pengaturan</string>
+
+    <string name="err_load_failed">Gagal untuk load data.\nMohon cek koneksi Internet anda!</string>
+
+    <string name="label_upcoming">Akan Datang</string>
+    <string name="label_now_playing">Sedang Tayang</string>
+
+    <string name="label_release_date">Tanggal Rilis</string>
+    <string name="label_vote">Vote Rata-Rata:</string>
+    <string name="label_genres">Jenis Film</string>
+    <string name="label_overview">Ringkasan Cerita</string>
+    <string name="label_production_details">Detil Produksi</string>
+    <string name="label_belongs">Merupakan Koleksi Dari</string>
+    <string name="label_budget">Anggaran</string>
+    <string name="label_revenue">Keuntungan</string>
+    <string name="label_companies">Perusahaan</string>
+    <string name="label_countries">Negara</string>
+
+    <string name="label_detail">Detil</string>
+    <string name="label_share">Bagikan</string>
+
+    <string name="label_communicate">Ceritakan</string>
+    <string name="label_search">cari berdasarkan judul film</string>
+
+    <string name="label_daily_reminder">Notifikasi pengingat harian sudah</string>
+    <string name="label_upcoming_reminder">Notifikasi film yang akan datang sudah</string>
+    <string name="label_activated">diaktifkan!</string>
+    <string name="label_deactivated">dinon-aktifkan!</string>
+
+    <string name="label_daily_reminder_title">Notifikasi Pengingat Harian</string>
+    <string name="label_daily_reminder_summary">Nyalakan/matikan notifikasi pengingat harian</string>
+
+    <string name="label_upcoming_reminder_title">Notifikasi Film Yang Akan Datang</string>
+    <string name="label_upcoming_reminder_summary">Nyalakan/matikan notifikasi film yang akan datang</string>
+
+    <string name="label_setting_locale_title">Pengaturan Bahasa</string>
+    <string name="label_setting_locale_summary">Ubah pengaturan bahasa di perangkat anda</string>
+
+    <string name="label_alarm_daily_reminder">Selamat pagi! Siap untuk pilih film terbaru hari ini?</string>
+</resources>

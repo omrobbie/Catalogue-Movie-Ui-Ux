@@ -1,8 +1,10 @@
 package com.omrobbie.cataloguemovieuiux.feature.settings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -65,12 +67,12 @@ public class SettingsActivity extends AppCompatActivity {
 
             if (key.equals(reminder_daily)) {
                 if (isOn) {
-                    alarmReceiver.setRepeatingAlarm(getActivity(), alarmReceiver.TYPE_REPEATING, "07:00", "Good morning! Ready to pick your new movies today?");
+                    alarmReceiver.setRepeatingAlarm(getActivity(), alarmReceiver.TYPE_REPEATING, "07:00", getString(R.string.label_alarm_daily_reminder));
                 } else {
                     alarmReceiver.cancelAlarm(getActivity(), alarmReceiver.TYPE_REPEATING);
                 }
 
-                Toast.makeText(SettingsActivity.this, "Daily Reminder Notification is now " + (isOn ? "activated!" : "deactivated!"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.label_daily_reminder) + " " + (isOn ? getString(R.string.label_activated) : getString(R.string.label_deactivated)), Toast.LENGTH_SHORT).show();
                 return true;
             }
 
@@ -79,7 +81,7 @@ public class SettingsActivity extends AppCompatActivity {
                     schedulerTask.createPeriodicTask();
                 } else schedulerTask.cancelPeriodicTask();
 
-                Toast.makeText(SettingsActivity.this, "Upcoming Reminder Notification is now " + (isOn ? "activated!" : "deactivated!"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.label_upcoming_reminder) + " " + (isOn ? getString(R.string.label_activated) : getString(R.string.label_deactivated)), Toast.LENGTH_SHORT).show();
                 return true;
             }
 
@@ -91,6 +93,8 @@ public class SettingsActivity extends AppCompatActivity {
             String key = preference.getKey();
 
             if (key.equals(setting_locale)) {
+                Intent intent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(intent);
                 return true;
             }
 

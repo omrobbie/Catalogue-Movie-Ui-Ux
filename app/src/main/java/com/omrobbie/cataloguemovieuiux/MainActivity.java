@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
 
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setQueryHint(getResources().getString(R.string.label_search));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -113,14 +114,6 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -139,7 +132,7 @@ public class MainActivity extends AppCompatActivity
         viewPager.setAdapter(new ATabPager(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setText(R.string.now_playing);
-        tabLayout.getTabAt(1).setText(R.string.upcoming);
+        tabLayout.getTabAt(0).setText(R.string.label_now_playing);
+        tabLayout.getTabAt(1).setText(R.string.label_upcoming);
     }
 }
