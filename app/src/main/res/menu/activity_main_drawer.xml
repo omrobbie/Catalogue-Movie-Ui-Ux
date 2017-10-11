@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_now_playing"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_local_activity"
             android:title="@string/label_now_playing" />
         <item
             android:id="@+id/nav_upcoming"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_move_to_inbox"
             android:title="@string/label_upcoming" />
     </group>
 
@@ -16,7 +16,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_share"
                 android:title="@string/label_share" />
         </menu>
     </item>
