@@ -1,6 +1,7 @@
 package com.omrobbie.cataloguemovieuiux.feature.search;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,12 +30,17 @@ public class SearchActivity extends AppCompatActivity {
     private Call<SearchModel> apiCall;
     private APIClient apiClient = new APIClient();
 
+    private static String BUNDLE = "bundle";
+    private Parcelable state;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
         ButterKnife.bind(this);
+
+        if (savedInstanceState != null) state = savedInstanceState.getParcelable(BUNDLE);
 
         setupList();
 
@@ -46,6 +52,12 @@ public class SearchActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (apiCall != null) apiCall.cancel();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(BUNDLE, rv_search.getLayoutManager().onSaveInstanceState());
     }
 
     private void setupList() {
@@ -61,6 +73,8 @@ public class SearchActivity extends AppCompatActivity {
             public void onResponse(Call<SearchModel> call, Response<SearchModel> response) {
                 if (response.isSuccessful()) {
                     adapter.replaceAll(response.body().getResults());
+
+                    if (state != null) rv_search.getLayoutManager().onRestoreInstanceState(state);
                 } else loadFailed();
             }
 

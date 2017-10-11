@@ -3,6 +3,7 @@ package com.omrobbie.cataloguemovieuiux.feature.now_playing;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,6 +40,9 @@ public class NowPlayingFragment extends Fragment {
     private Call<NowPlayingModel> apiCall;
     private APIClient apiClient = new APIClient();
 
+    private static String BUNDLE = "bundle";
+    private Parcelable state;
+
     public NowPlayingFragment() {
         // Required empty public constructor
     }
@@ -52,6 +56,8 @@ public class NowPlayingFragment extends Fragment {
 
         unbinder = ButterKnife.bind(this, view);
 
+        if (savedInstanceState != null) state = savedInstanceState.getParcelable(BUNDLE);
+
         setupList();
         loadData();
 
@@ -63,6 +69,12 @@ public class NowPlayingFragment extends Fragment {
         super.onDestroyView();
         unbinder.unbind();
         if (apiCall != null) apiCall.cancel();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(BUNDLE, rv_now_playing.getLayoutManager().onSaveInstanceState());
     }
 
     private void setupList() {
@@ -78,6 +90,8 @@ public class NowPlayingFragment extends Fragment {
             public void onResponse(Call<NowPlayingModel> call, Response<NowPlayingModel> response) {
                 if (response.isSuccessful()) {
                     adapter.replaceAll(response.body().getResults());
+
+                    if (state != null) rv_now_playing.getLayoutManager().onRestoreInstanceState(state);
                 } else loadFailed();
             }
 
