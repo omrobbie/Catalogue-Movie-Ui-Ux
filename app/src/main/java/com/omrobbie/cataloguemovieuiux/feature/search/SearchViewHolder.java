@@ -74,10 +74,10 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, item.getTitle());
+                intent.putExtra(Intent.EXTRA_TITLE, item.getTitle());
                 intent.putExtra(Intent.EXTRA_SUBJECT, item.getTitle());
                 intent.putExtra(Intent.EXTRA_TEXT, item.getTitle() + "\n\n" + item.getOverview());
-                itemView.getContext().startActivity(Intent.createChooser(intent, "Share"));
+                itemView.getContext().startActivity(Intent.createChooser(intent, itemView.getResources().getString(R.string.label_share)));
             }
         });
     }

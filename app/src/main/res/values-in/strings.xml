@@ -39,4 +39,6 @@
     <string name="label_setting_locale_summary">Ubah pengaturan bahasa di perangkat anda</string>
 
     <string name="label_alarm_daily_reminder">Selamat pagi! Siap untuk pilih film terbaru hari ini?</string>
+
+    <string name="share_description">Download sekarang! Dapatkan aplikasi terbaik untuk update informasi film terbaru disini!</string>
 </resources>
