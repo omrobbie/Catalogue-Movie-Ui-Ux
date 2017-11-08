@@ -10,6 +10,11 @@
             android:id="@+id/nav_upcoming"
             android:icon="@drawable/ic_move_to_inbox"
             android:title="@string/label_upcoming" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/label_favorite"
+            />
     </group>
 
     <item android:title="@string/label_communicate">

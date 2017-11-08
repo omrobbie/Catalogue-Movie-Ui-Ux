@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_now_playing) selectTab(0);
         if (id == R.id.nav_upcoming) selectTab(1);
+        if (id == R.id.nav_favorite) selectTab(2);
 
         if (id == R.id.nav_share) {
             Intent intent = new Intent(Intent.ACTION_SEND);
@@ -174,6 +175,7 @@ public class MainActivity extends AppCompatActivity
 
         tabLayout.getTabAt(0).setText(R.string.label_now_playing);
         tabLayout.getTabAt(1).setText(R.string.label_upcoming);
+        tabLayout.getTabAt(2).setText(R.string.label_favorite);
         tabLayout.setOnTabSelectedListener(this);
     }
 

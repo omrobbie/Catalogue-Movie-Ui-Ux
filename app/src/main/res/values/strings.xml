@@ -15,6 +15,7 @@
 
     <string name="label_now_playing">Now Playing</string>
     <string name="label_upcoming">Upcoming</string>
+    <string name="label_favorite">Favorite</string>
 
     <string name="label_release_date">Release Date</string>
     <string name="label_vote">Vote Average:</string>

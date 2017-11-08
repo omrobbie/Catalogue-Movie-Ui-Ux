@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.omrobbie.cataloguemovieuiux.feature.favorite.FavoriteFragment;
 import com.omrobbie.cataloguemovieuiux.feature.now_playing.NowPlayingFragment;
 import com.omrobbie.cataloguemovieuiux.feature.upcoming.UpcomingFragment;
 
@@ -13,7 +14,7 @@ import com.omrobbie.cataloguemovieuiux.feature.upcoming.UpcomingFragment;
 
 public class ATabPager extends FragmentPagerAdapter {
 
-    private static final int NUM_ITEMS = 2;
+    private static final int NUM_ITEMS = 3;
 
     public ATabPager(FragmentManager fm) {
         super(fm);
@@ -32,6 +33,9 @@ public class ATabPager extends FragmentPagerAdapter {
 
             case 1:
                 return new UpcomingFragment();
+
+            case 2:
+                return new FavoriteFragment();
 
             default:
                 return null;
