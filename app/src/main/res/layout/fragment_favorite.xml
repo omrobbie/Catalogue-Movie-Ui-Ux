@@ -4,4 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.omrobbie.cataloguemovieuiux.feature.favorite.FavoriteFragment">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </FrameLayout>
