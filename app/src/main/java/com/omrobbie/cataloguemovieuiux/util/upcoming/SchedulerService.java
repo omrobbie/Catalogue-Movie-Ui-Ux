@@ -17,8 +17,8 @@ import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.DetailActivity;
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
-import com.omrobbie.cataloguemovieuiux.model.upcoming.ResultsItem;
-import com.omrobbie.cataloguemovieuiux.model.upcoming.UpcomingModel;
+import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.UpcomingModel;
 import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import java.util.List;

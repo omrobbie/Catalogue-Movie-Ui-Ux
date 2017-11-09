@@ -1,13 +1,10 @@
-package com.omrobbie.cataloguemovieuiux.model.now_playing;
+package com.omrobbie.cataloguemovieuiux.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class NowPlayingModel {
-
-    @SerializedName("dates")
-    private Dates dates;
+public class SearchModel {
 
     @SerializedName("page")
     private int page;
@@ -20,14 +17,6 @@ public class NowPlayingModel {
 
     @SerializedName("total_results")
     private int totalResults;
-
-    public void setDates(Dates dates) {
-        this.dates = dates;
-    }
-
-    public Dates getDates() {
-        return dates;
-    }
 
     public void setPage(int page) {
         this.page = page;
@@ -64,9 +53,8 @@ public class NowPlayingModel {
     @Override
     public String toString() {
         return
-                "NowPlayingModel{" +
-                        "dates = '" + dates + '\'' +
-                        ",page = '" + page + '\'' +
+                "SearchModel{" +
+                        "page = '" + page + '\'' +
                         ",total_pages = '" + totalPages + '\'' +
                         ",results = '" + results + '\'' +
                         ",total_results = '" + totalResults + '\'' +

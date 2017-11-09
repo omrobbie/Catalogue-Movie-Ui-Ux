@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.omrobbie.cataloguemovieuiux.R;
-import com.omrobbie.cataloguemovieuiux.model.search.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
 
 import java.util.ArrayList;
 import java.util.List;

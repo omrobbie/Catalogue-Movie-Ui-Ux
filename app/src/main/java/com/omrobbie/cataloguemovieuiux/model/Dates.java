@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.model.now_playing;
+package com.omrobbie.cataloguemovieuiux.model;
 
 import com.google.gson.annotations.SerializedName;
 

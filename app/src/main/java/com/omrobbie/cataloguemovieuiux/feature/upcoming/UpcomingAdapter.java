@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.omrobbie.cataloguemovieuiux.R;
-import com.omrobbie.cataloguemovieuiux.model.upcoming.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
-import com.omrobbie.cataloguemovieuiux.model.now_playing.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
 import com.omrobbie.cataloguemovieuiux.util.DateTime;
 import com.omrobbie.cataloguemovieuiux.util.Language;
 

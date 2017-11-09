@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.BuildConfig;
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.DetailActivity;
-import com.omrobbie.cataloguemovieuiux.model.upcoming.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
 import com.omrobbie.cataloguemovieuiux.util.DateTime;
 
 import butterknife.BindView;

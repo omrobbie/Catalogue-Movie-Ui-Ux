@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.omrobbie.cataloguemovieuiux.R;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
-import com.omrobbie.cataloguemovieuiux.model.search.SearchModel;
+import com.omrobbie.cataloguemovieuiux.model.SearchModel;
 import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import butterknife.BindView;
