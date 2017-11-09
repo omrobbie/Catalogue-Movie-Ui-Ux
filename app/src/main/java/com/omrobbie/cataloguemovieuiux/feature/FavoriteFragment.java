@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.favorite;
+package com.omrobbie.cataloguemovieuiux.feature;
 
 
 import android.content.Context;

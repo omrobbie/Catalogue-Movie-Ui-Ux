@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.upcoming;
+package com.omrobbie.cataloguemovieuiux.feature;
 
 
 import android.content.Context;
@@ -13,8 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.omrobbie.cataloguemovieuiux.R;
+import com.omrobbie.cataloguemovieuiux.adapter.MovieAdapter;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
-import com.omrobbie.cataloguemovieuiux.model.UpcomingModel;
+import com.omrobbie.cataloguemovieuiux.model.NowPlayingModel;
 import com.omrobbie.cataloguemovieuiux.util.Language;
 
 import butterknife.BindView;
@@ -27,23 +28,23 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UpcomingFragment extends Fragment {
+public class NowPlayingFragment extends Fragment {
 
     private Context context;
     private Unbinder unbinder;
 
-    @BindView(R.id.rv_upcoming)
-    RecyclerView rv_upcoming;
+    @BindView(R.id.rv_now_playing)
+    RecyclerView rv_now_playing;
 
-    private UpcomingAdapter adapter;
+    private MovieAdapter adapter;
 
-    private Call<UpcomingModel> apiCall;
+    private Call<NowPlayingModel> apiCall;
     private APIClient apiClient = new APIClient();
 
     private static String BUNDLE = "bundle";
     private Parcelable state;
 
-    public UpcomingFragment() {
+    public NowPlayingFragment() {
         // Required empty public constructor
     }
 
@@ -51,7 +52,7 @@ public class UpcomingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
+        View view = inflater.inflate(R.layout.fragment_now_playing, container, false);
         context = view.getContext();
 
         unbinder = ButterKnife.bind(this, view);
@@ -74,29 +75,29 @@ public class UpcomingFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(BUNDLE, rv_upcoming.getLayoutManager().onSaveInstanceState());
+        outState.putParcelable(BUNDLE, rv_now_playing.getLayoutManager().onSaveInstanceState());
     }
 
     private void setupList() {
-        adapter = new UpcomingAdapter();
-        rv_upcoming.setLayoutManager(new LinearLayoutManager(context));
-        rv_upcoming.setAdapter(adapter);
+        adapter = new MovieAdapter();
+        rv_now_playing.setLayoutManager(new LinearLayoutManager(context));
+        rv_now_playing.setAdapter(adapter);
     }
 
     private void loadData() {
-        apiCall = apiClient.getService().getUpcomingMovie(Language.getCountry());
-        apiCall.enqueue(new Callback<UpcomingModel>() {
+        apiCall = apiClient.getService().getNowPlayingMovie(Language.getCountry());
+        apiCall.enqueue(new Callback<NowPlayingModel>() {
             @Override
-            public void onResponse(Call<UpcomingModel> call, Response<UpcomingModel> response) {
+            public void onResponse(Call<NowPlayingModel> call, Response<NowPlayingModel> response) {
                 if (response.isSuccessful()) {
                     adapter.replaceAll(response.body().getResults());
 
-                    if (state != null) rv_upcoming.getLayoutManager().onRestoreInstanceState(state);
+                    if (state != null) rv_now_playing.getLayoutManager().onRestoreInstanceState(state);
                 } else loadFailed();
             }
 
             @Override
-            public void onFailure(Call<UpcomingModel> call, Throwable t) {
+            public void onFailure(Call<NowPlayingModel> call, Throwable t) {
                 loadFailed();
             }
         });

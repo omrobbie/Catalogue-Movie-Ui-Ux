@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.search;
+package com.omrobbie.cataloguemovieuiux.adapter;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -20,10 +20,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by omrobbie on 10/10/2017.
+ * Created by omrobbie on 08/11/2017.
  */
 
-public class SearchViewHolder extends RecyclerView.ViewHolder {
+public class MovieViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.img_poster)
     ImageView img_poster;
@@ -43,7 +43,7 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.btn_share)
     Button btn_share;
 
-    public SearchViewHolder(View itemView) {
+    public MovieViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }

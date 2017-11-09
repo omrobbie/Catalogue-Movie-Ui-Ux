@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.now_playing;
+package com.omrobbie.cataloguemovieuiux.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by omrobbie on 09/10/2017.
+ * Created by omrobbie on 08/11/2017.
  */
 
-public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingViewHolder> {
+public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
 
     private List<ResultsItem> list = new ArrayList<>();
 
-    public NowPlayingAdapter() {
+    public MovieAdapter() {
     }
 
     public void clearAll() {
@@ -59,8 +59,8 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingViewHolder
      * @see #onBindViewHolder(ViewHolder, int)
      */
     @Override
-    public NowPlayingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new NowPlayingViewHolder(
+    public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new MovieViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
                         R.layout.activity_detail_item, parent, false
                 )
@@ -88,7 +88,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingViewHolder
      * @param position The position of the item within the adapter's data set.
      */
     @Override
-    public void onBindViewHolder(NowPlayingViewHolder holder, int position) {
+    public void onBindViewHolder(MovieViewHolder holder, int position) {
         holder.bind(list.get(position));
     }
 

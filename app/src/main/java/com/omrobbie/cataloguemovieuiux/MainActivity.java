@@ -14,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.omrobbie.cataloguemovieuiux.feature.search.SearchActivity;
+import com.omrobbie.cataloguemovieuiux.feature.SearchActivity;
 import com.omrobbie.cataloguemovieuiux.feature.settings.SettingsActivity;
 import com.omrobbie.cataloguemovieuiux.util.ATabPager;
 

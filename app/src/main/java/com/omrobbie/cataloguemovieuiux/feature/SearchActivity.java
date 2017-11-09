@@ -1,4 +1,4 @@
-package com.omrobbie.cataloguemovieuiux.feature.search;
+package com.omrobbie.cataloguemovieuiux.feature;
 
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.omrobbie.cataloguemovieuiux.R;
+import com.omrobbie.cataloguemovieuiux.adapter.MovieAdapter;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
 import com.omrobbie.cataloguemovieuiux.model.SearchModel;
 import com.omrobbie.cataloguemovieuiux.util.Language;
@@ -25,7 +26,7 @@ public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.rv_search)
     RecyclerView rv_search;
 
-    private SearchAdapter adapter;
+    private MovieAdapter adapter;
 
     private Call<SearchModel> apiCall;
     private APIClient apiClient = new APIClient();
@@ -61,7 +62,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void setupList() {
-        adapter = new SearchAdapter();
+        adapter = new MovieAdapter();
         rv_search.setLayoutManager(new LinearLayoutManager(this));
         rv_search.setAdapter(adapter);
     }

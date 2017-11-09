@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.omrobbie.cataloguemovieuiux.feature.favorite.FavoriteFragment;
-import com.omrobbie.cataloguemovieuiux.feature.now_playing.NowPlayingFragment;
-import com.omrobbie.cataloguemovieuiux.feature.upcoming.UpcomingFragment;
+import com.omrobbie.cataloguemovieuiux.feature.FavoriteFragment;
+import com.omrobbie.cataloguemovieuiux.feature.NowPlayingFragment;
+import com.omrobbie.cataloguemovieuiux.feature.UpcomingFragment;
 
 /**
  * Created by omrobbie on 09/10/2017.
