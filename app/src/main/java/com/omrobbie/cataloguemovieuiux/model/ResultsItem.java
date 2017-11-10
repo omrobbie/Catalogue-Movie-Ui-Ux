@@ -1,8 +1,21 @@
 package com.omrobbie.cataloguemovieuiux.model;
 
+import android.database.Cursor;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
+import static android.provider.BaseColumns._ID;
+import static com.omrobbie.cataloguemovieuiux.provider.DatabaseContract.getColumnDouble;
+import static com.omrobbie.cataloguemovieuiux.provider.DatabaseContract.getColumnInt;
+import static com.omrobbie.cataloguemovieuiux.provider.DatabaseContract.getColumnString;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_BACKDROP;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_OVERVIEW;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_POSTER;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_RELEASE_DATE;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_TITLE;
+import static com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns.COLUMN_VOTE;
 
 public class ResultsItem {
 
@@ -158,6 +171,28 @@ public class ResultsItem {
 
     public int getVoteCount() {
         return voteCount;
+    }
+
+    public ResultsItem() {
+    }
+
+    public ResultsItem(Cursor cursor) {
+        this.id = getColumnInt(cursor, _ID);
+        this.title = getColumnString(cursor, COLUMN_TITLE);
+        this.backdropPath = getColumnString(cursor, COLUMN_BACKDROP);
+        this.posterPath = getColumnString(cursor, COLUMN_POSTER);
+        this.releaseDate = getColumnString(cursor, COLUMN_RELEASE_DATE);
+        this.voteAverage = getColumnDouble(cursor, COLUMN_VOTE);
+        this.overview = getColumnString(cursor, COLUMN_OVERVIEW);
+
+        // dibawah ini milik detail
+        //this.genreIds =
+        //this.poster_belongs
+        //this.budget
+        //this.revenue
+        //this.companies
+        //this.countries
+
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,6 +86,9 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.tv_countries)
     TextView tv_countries;
 
+    @BindView(R.id.iv_fav)
+    ImageView iv_fav;
+
     private Call<DetailModel> apiCall;
     private APIClient apiClient = new APIClient();
     private Gson gson = new Gson();
@@ -102,6 +106,13 @@ public class DetailActivity extends AppCompatActivity {
 
         String movie_item = getIntent().getStringExtra(MOVIE_ITEM);
         loadData(movie_item);
+        
+        iv_fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "Set As My Favorite Movie", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

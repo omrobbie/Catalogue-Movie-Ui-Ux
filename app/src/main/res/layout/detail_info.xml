@@ -7,13 +7,29 @@
     android:orientation="vertical"
     android:padding="@dimen/def_clear_space">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/def_clear_space"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/def_clear_space"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_fav"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="@dimen/def_clear_space"
+            android:src="@drawable/ic_favorite_border"
+            android:tint="@color/colorAccent" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
