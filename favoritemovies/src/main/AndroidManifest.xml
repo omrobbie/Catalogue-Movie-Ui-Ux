@@ -2,12 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.omrobbie.favoritemovies">
 
-    <permission
-        android:name="com.omrobbie.cataloguemovie.READ_DATABASE"
-        android:protectionLevel="normal" />
-    <permission
-        android:name="com.omrobbie.cataloguemovie.WRITE_DATABASE"
-        android:protectionLevel="normal" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.omrobbie.cataloguemovie.READ_DATABASE" />
+    <uses-permission android:name="com.omrobbie.cataloguemovie.WRITE_DATABASE" />
 
     <application
         android:allowBackup="true"

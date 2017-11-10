@@ -5,12 +5,12 @@ import android.database.Cursor;
 import com.google.gson.annotations.SerializedName;
 
 import static android.provider.BaseColumns._ID;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_BACKDROP;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_OVERVIEW;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_POSTER;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_RELEASE_DATE;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_TITLE;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_VOTE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_BACKDROP;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_OVERVIEW;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_POSTER;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_RELEASE_DATE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_TITLE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_VOTE;
 import static com.omrobbie.favoritemovies.provider.DatabaseContract.getColumnDouble;
 import static com.omrobbie.favoritemovies.provider.DatabaseContract.getColumnInt;
 import static com.omrobbie.favoritemovies.provider.DatabaseContract.getColumnString;

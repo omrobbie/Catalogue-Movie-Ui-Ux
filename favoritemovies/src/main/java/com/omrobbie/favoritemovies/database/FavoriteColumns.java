@@ -1,4 +1,4 @@
-package com.omrobbie.favoritemovies;
+package com.omrobbie.favoritemovies.database;
 
 import android.provider.BaseColumns;
 

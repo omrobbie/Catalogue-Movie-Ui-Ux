@@ -3,7 +3,7 @@ package com.omrobbie.favoritemovies.provider;
 import android.database.Cursor;
 import android.net.Uri;
 
-import com.omrobbie.favoritemovies.FavoriteColumns;
+import com.omrobbie.favoritemovies.database.FavoriteColumns;
 
 /**
  * Created by omrobbie on 11/11/2017.

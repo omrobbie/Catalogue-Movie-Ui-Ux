@@ -4,14 +4,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_BACKDROP;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_ID;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_OVERVIEW;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_POSTER;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_RELEASE_DATE;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_TITLE;
-import static com.omrobbie.favoritemovies.FavoriteColumns.COLUMN_VOTE;
-import static com.omrobbie.favoritemovies.FavoriteColumns.TABLE_NAME;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_BACKDROP;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_ID;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_OVERVIEW;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_POSTER;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_RELEASE_DATE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_TITLE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.COLUMN_VOTE;
+import static com.omrobbie.favoritemovies.database.FavoriteColumns.TABLE_NAME;
 
 /**
  * Created by omrobbie on 11/11/2017.

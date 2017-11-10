@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.omrobbie.favoritemovies.FavoriteColumns;
-
 import static android.provider.BaseColumns._ID;
 
 /**

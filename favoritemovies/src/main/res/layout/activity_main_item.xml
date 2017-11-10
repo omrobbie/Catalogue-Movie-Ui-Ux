@@ -12,6 +12,7 @@
         android:padding="@dimen/gap_small">
 
         <ImageView
+            android:id="@+id/iv_poster"
             android:layout_width="92dp"
             android:layout_height="48dp"
             android:scaleType="centerCrop" />
@@ -23,11 +24,13 @@
             android:paddingLeft="@dimen/gap_small">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_overview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
