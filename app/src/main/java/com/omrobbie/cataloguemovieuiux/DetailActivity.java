@@ -1,5 +1,8 @@
 package com.omrobbie.cataloguemovieuiux;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +16,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.omrobbie.cataloguemovieuiux.api.APIClient;
-import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
+import com.omrobbie.cataloguemovieuiux.database.FavoriteHelper;
 import com.omrobbie.cataloguemovieuiux.model.ResultsItem;
+import com.omrobbie.cataloguemovieuiux.model.detail.DetailModel;
+import com.omrobbie.cataloguemovieuiux.provider.FavoriteColumns;
 import com.omrobbie.cataloguemovieuiux.util.DateTime;
 import com.omrobbie.cataloguemovieuiux.util.Language;
 
@@ -27,6 +32,8 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.omrobbie.cataloguemovieuiux.provider.DatabaseContract.CONTENT_URI;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -93,6 +100,10 @@ public class DetailActivity extends AppCompatActivity {
     private APIClient apiClient = new APIClient();
     private Gson gson = new Gson();
 
+    private ResultsItem item;
+    private FavoriteHelper favoriteHelper;
+    private Boolean isFavorite = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,13 +115,15 @@ public class DetailActivity extends AppCompatActivity {
 
         collapsing_toolbar.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
 
-        String movie_item = getIntent().getStringExtra(MOVIE_ITEM);
-        loadData(movie_item);
-        
+        String json = getIntent().getStringExtra(MOVIE_ITEM);
+        item = gson.fromJson(json, ResultsItem.class);
+        loadData();
+
         iv_fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "Set As My Favorite Movie", Toast.LENGTH_SHORT).show();
+                if (isFavorite) FavoriteRemove();
+                else FavoriteSave();
             }
         });
     }
@@ -119,6 +132,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (apiCall != null) apiCall.cancel();
+        if (favoriteHelper != null) favoriteHelper.close();
     }
 
     @Override
@@ -133,8 +147,8 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    private void loadData(String movie_item) {
-        ResultsItem item = gson.fromJson(movie_item, ResultsItem.class);
+    private void loadData() {
+        loadDataSQLite();
         loadDataInServer(String.valueOf(item.getId()));
 
         getSupportActionBar().setTitle(item.getTitle());
@@ -164,6 +178,26 @@ public class DetailActivity extends AppCompatActivity {
         if (Math.round(userRating) > integerPart) {
             img_vote.get(integerPart).setImageResource(R.drawable.ic_star_half_black_24dp);
         }
+    }
+
+    private void loadDataSQLite() {
+        favoriteHelper = new FavoriteHelper(this);
+        favoriteHelper.open();
+
+        Cursor cursor = getContentResolver().query(
+                Uri.parse(CONTENT_URI + "/" + item.getId()),
+                null,
+                null,
+                null,
+                null
+        );
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) isFavorite = true;
+            cursor.close();
+        }
+        if (isFavorite) iv_fav.setImageResource(R.drawable.ic_favorite);
+        else iv_fav.setImageResource(R.drawable.ic_favorite_border);
     }
 
     private void loadDataInServer(String movie_item) {
@@ -219,5 +253,29 @@ public class DetailActivity extends AppCompatActivity {
 
     private void loadFailed() {
         Toast.makeText(this, R.string.err_load_failed, Toast.LENGTH_SHORT).show();
+    }
+
+    private void FavoriteSave() {
+        //Log.d("TAG", "FavoriteSave: " + item.getId());
+        ContentValues cv = new ContentValues();
+        cv.put(FavoriteColumns.COLUMN_ID, item.getId());
+        cv.put(FavoriteColumns.COLUMN_TITLE, item.getTitle());
+        cv.put(FavoriteColumns.COLUMN_BACKDROP, item.getBackdropPath());
+        cv.put(FavoriteColumns.COLUMN_POSTER, item.getPosterPath());
+        cv.put(FavoriteColumns.COLUMN_RELEASE_DATE, item.getReleaseDate());
+        cv.put(FavoriteColumns.COLUMN_VOTE, item.getVoteAverage());
+        cv.put(FavoriteColumns.COLUMN_OVERVIEW, item.getOverview());
+
+        getContentResolver().insert(CONTENT_URI, cv);
+        Toast.makeText(this, R.string.cv_save, Toast.LENGTH_SHORT).show();
+    }
+
+    private void FavoriteRemove() {
+        getContentResolver().delete(
+                Uri.parse(CONTENT_URI + "/" + item.getId()),
+                null,
+                null
+        );
+        Toast.makeText(this, R.string.cv_remove, Toast.LENGTH_SHORT).show();
     }
 }

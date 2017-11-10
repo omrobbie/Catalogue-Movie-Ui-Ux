@@ -28,13 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FavoriteColumns.COLUMN_POSTER + " text not null, " +
                 FavoriteColumns.COLUMN_RELEASE_DATE + " text not null, " +
                 FavoriteColumns.COLUMN_VOTE + " text not null, " +
-                FavoriteColumns.COLUMN_GENRES + " text not null, " +
-                FavoriteColumns.COLUMN_OVERVIEW + " text not null, " +
-                FavoriteColumns.COLUMN_POSTER_BELONGS + " text not null, " +
-                FavoriteColumns.COLUMN_BUDGET + " text not null, " +
-                FavoriteColumns.COLUMN_REVENUE + " text not null, " +
-                FavoriteColumns.COLUMN_COMPANIES + " text not null, " +
-                FavoriteColumns.COLUMN_COUNTRIES + " text not null, " +
+                FavoriteColumns.COLUMN_OVERVIEW + " text not null " +
                 ");";
 
         sqLiteDatabase.execSQL(CREATE_TABLE_MOVIE);

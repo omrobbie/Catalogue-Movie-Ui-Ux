@@ -184,15 +184,6 @@ public class ResultsItem {
         this.releaseDate = getColumnString(cursor, COLUMN_RELEASE_DATE);
         this.voteAverage = getColumnDouble(cursor, COLUMN_VOTE);
         this.overview = getColumnString(cursor, COLUMN_OVERVIEW);
-
-        // dibawah ini milik detail
-        //this.genreIds =
-        //this.poster_belongs
-        //this.budget
-        //this.revenue
-        //this.companies
-        //this.countries
-
     }
 
     @Override

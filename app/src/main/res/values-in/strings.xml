@@ -41,4 +41,7 @@
     <string name="label_alarm_daily_reminder">Selamat pagi! Siap untuk pilih film terbaru hari ini?</string>
 
     <string name="share_description">Download sekarang! Dapatkan aplikasi terbaik untuk update informasi film terbaru disini!</string>
+
+    <string name="cv_save">Anda menyukai film ini</string>
+    <string name="cv_remove">Film ini telah dihapus dari daftar favorit!</string>
 </resources>

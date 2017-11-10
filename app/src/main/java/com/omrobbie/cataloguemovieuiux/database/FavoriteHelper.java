@@ -45,7 +45,7 @@ public class FavoriteHelper {
                 null,
                 null,
                 null,
-                _ID + " = ?"
+                _ID + " DESC"
         );
     }
 
@@ -54,7 +54,7 @@ public class FavoriteHelper {
                 TABLE_NAME,
                 null,
                 _ID + " = ?",
-                null,
+                new String[]{id},
                 null,
                 null,
                 null

@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <permission
+        android:name="com.omrobbie.cataloguemovie.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.omrobbie.cataloguemovie.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -61,6 +68,13 @@
                 <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
             </intent-filter>
         </service>
+
+        <provider
+            android:name=".provider.FavoriteProvider"
+            android:authorities="com.omrobbie.cataloguemovie"
+            android:exported="true"
+            android:readPermission="com.omrobbie.cataloguemovie.READ_DATABASE"
+            android:writePermission="com.omrobbie.cataloguemovie.WRITE_DATABASE" />
 
     </application>
 

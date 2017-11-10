@@ -51,4 +51,7 @@
     <string name="label_alarm_daily_reminder">Good morning! Ready to pick your new movies today?</string>
 
     <string name="share_description">Download now! Get the greatest app to get yourself an updated movie information!</string>
+
+    <string name="cv_save">You like this movie</string>
+    <string name="cv_remove">This movie has been removed from favorite list!</string>
 </resources>
