@@ -124,6 +124,9 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (isFavorite) FavoriteRemove();
                 else FavoriteSave();
+
+                isFavorite = !isFavorite;
+                favoriteSet();
             }
         });
     }
@@ -145,6 +148,11 @@ public class DetailActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void favoriteSet() {
+        if (isFavorite) iv_fav.setImageResource(R.drawable.ic_favorite);
+        else iv_fav.setImageResource(R.drawable.ic_favorite_border);
     }
 
     private void loadData() {
@@ -196,8 +204,7 @@ public class DetailActivity extends AppCompatActivity {
             if (cursor.moveToFirst()) isFavorite = true;
             cursor.close();
         }
-        if (isFavorite) iv_fav.setImageResource(R.drawable.ic_favorite);
-        else iv_fav.setImageResource(R.drawable.ic_favorite_border);
+        favoriteSet();
     }
 
     private void loadDataInServer(String movie_item) {

@@ -59,6 +59,12 @@ public class FavoriteFragment extends Fragment {
         unbinder.unbind();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        new loadDataAsync().execute();
+    }
+
     private void setupList() {
         adapter = new FavoriteAdapter(list);
         rv_favorite.setLayoutManager(new LinearLayoutManager(context));
