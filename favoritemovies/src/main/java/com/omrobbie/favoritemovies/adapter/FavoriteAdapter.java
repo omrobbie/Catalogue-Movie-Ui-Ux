@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.omrobbie.favoritemovies.R;
@@ -83,6 +84,13 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                     .load("http://image.tmdb.org/t/p/w154/" + item.getPosterPath())
                     .into(iv_poster);
 
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(itemView.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }

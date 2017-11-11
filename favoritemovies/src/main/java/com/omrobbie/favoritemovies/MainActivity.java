@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupList() {
         adapter = new FavoriteAdapter(list);
         rv_favorite.setLayoutManager(new LinearLayoutManager(this));
+        rv_favorite.addItemDecoration(new DividerItemDecoration(rv_favorite.getContext(), DividerItemDecoration.VERTICAL));
         rv_favorite.setAdapter(adapter);
     }
 
