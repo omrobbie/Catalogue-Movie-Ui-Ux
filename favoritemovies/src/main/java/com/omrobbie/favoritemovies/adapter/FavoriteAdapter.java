@@ -1,20 +1,24 @@
 package com.omrobbie.favoritemovies.adapter;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.omrobbie.favoritemovies.DetailActivity;
 import com.omrobbie.favoritemovies.R;
 import com.omrobbie.favoritemovies.provider.FavoriteModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.omrobbie.favoritemovies.provider.DatabaseContract.CONTENT_URI;
 
 /**
  * Created by omrobbie on 11/11/2017.
@@ -76,7 +80,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
             ButterKnife.bind(this, itemView);
         }
 
-        public void bind(FavoriteModel item) {
+        public void bind(final FavoriteModel item) {
             tv_title.setText(item.getTitle());
             tv_overview.setText(item.getOverview());
 
@@ -84,11 +88,12 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                     .load("http://image.tmdb.org/t/p/w154/" + item.getPosterPath())
                     .into(iv_poster);
 
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(itemView.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(itemView.getContext(), DetailActivity.class);
+                    intent.setData(Uri.parse(CONTENT_URI + "/" + item.getId()));
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }
