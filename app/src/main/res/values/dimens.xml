@@ -14,4 +14,10 @@
     <dimen name="img_poster_154_height">231dp</dimen>
     <dimen name="img_poster_92_width">92dp</dimen>
     <dimen name="img_poster_92_height">138dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
 </resources>

@@ -54,4 +54,8 @@
 
     <string name="cv_save">You like this movie</string>
     <string name="cv_remove">This movie has been removed from favorite list!</string>
+
+    <string name="appwidget_text">Favorite Movies</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_text">You dont have favorite movies yet</string>
 </resources>

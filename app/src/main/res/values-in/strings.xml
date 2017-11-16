@@ -44,4 +44,8 @@
 
     <string name="cv_save">Anda menyukai film ini</string>
     <string name="cv_remove">Film ini telah dihapus dari daftar favorit!</string>
+
+    <string name="appwidget_text">Film Favorit</string>
+    <string name="add_widget">Tambah widget</string>
+    <string name="empty_text">Anda belum punya film favorit</string>
 </resources>
