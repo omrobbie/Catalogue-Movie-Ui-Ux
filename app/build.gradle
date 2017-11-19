@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.omrobbie.cataloguemovieuiux"
         minSdkVersion 15
@@ -27,7 +27,7 @@ ext {
     butterKnifeVersion = '8.8.1'
     retrofitVersion = "2.3.0"
     glideVersion = "4.0.0"
-    gcmVersion = "9.6.1"
+    gcmVersion = "11.6.0"
     circleImageViewVersion = "2.2.0"
 }
 
