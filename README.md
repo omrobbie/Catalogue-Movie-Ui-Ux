@@ -1,7 +1,10 @@
 # Catalogue-Movie-Ui-Ux
 The second, forth, and last (fifth) final project from dicoding.com online course. Create the searching movie apps with Ui/Ux from the catalogue using api.themoviedb.org.
 
-## Submission 2
+### Penampakan 
+<img src="https://github.com/omrobbie/Catalogue-Movie-Ui-Ux/blob/master/screenshot/Screenshot_1516765430.png" width="256">&nbsp;&nbsp;<img src="https://github.com/omrobbie/Catalogue-Movie-Ui-Ux/blob/master/screenshot/Screenshot_1516765440.png" width="256">&nbsp;&nbsp;<img src="https://github.com/omrobbie/Catalogue-Movie-Ui-Ux/blob/master/screenshot/Screenshot_1516765505.png" width="256">
+
+### Submission 2
 Untuk menyelesaikan modul Ui Ux anda harus submit aplikasi lanjutan dari modul project Fundamentals yaitu Catalogue Movie. Dengan memanfaatkan materi Ui Ux , aplikasi Catalogue Movie ditambah beberapa fitur baru.
 
 ### Requirements atau Fitur yang harus ada pada aplikasi kamu
@@ -32,3 +35,12 @@ Untuk menyelesaikan modul Extended Application anda harus submit aplikasi lanjut
 	* Daily Reminder, mengingatkan untuk kembali ke catalog movie
 	* Upcoming Reminder atau Now Playing Reminder
 3. Menuju detail dari notifikasi nowplaying / upcoming
+
+# Update
+Bagi teman-teman yang masih mengikuti kelas dari dicoding, [Kelas Menjadi Android Developer Expert](https://www.dicoding.com/academies/14 "klik untuk melihat kelas"). Silahkan gunakan source ini sebagai bahan referensi, tapi **TIDAK** untuk disalin secara utuh tanpa tau cara implementasinya.
+
+Ayolah kawan.. Kalian sudah bayar mahal untuk ikut kelas ini, kalian harus dapat ilmunya. Percuma kalian dapat sertifikat dari dicoding kalau di kemudian hari kalian tidak mendapatkan ilmunya dari sini.
+
+Semangat kawan.. Perjalanan masih panjang. Lakukan yang terbaik yang kalian bisa. Silahkan tanya saya jika ada yang kurang dimengerti. Kalau saya bisa bantu, pasti saya dampingi.
+
+Mari kita maju bersama-sama..
