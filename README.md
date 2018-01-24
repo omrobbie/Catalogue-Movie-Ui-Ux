@@ -15,7 +15,7 @@ Untuk menyelesaikan modul Ui Ux anda harus submit aplikasi lanjutan dari modul p
 5. Semua fungsi dari fitur [project Fundamentals](https://github.com/omrobbie/CatalogueMovie "Catalogue Movie Fundamentals") harus tetap berjalan
 
 ### Link API yang digunakan
-1. api.themoviedb.org/3/movie/now_playing?api_key=<APIKEY KAMU>&language=en-US
+1. api.themoviedb.org/3/movie/now_playing?api_key=(APIKEY KAMU)&language=en-US
 
 ## Submission 4
 Untuk menyelesaikan modul BasisData anda harus submit aplikasi lanjutan dari modul project UI/UX yaitu Catalogue Movie.aplikasi Catalogue Movie ditambah beberapa fitur baru dengan memanfaatkan materi SharedPreferences, SQLite, Read and Write File, serta ContentProvider.
