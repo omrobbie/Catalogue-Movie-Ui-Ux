@@ -1,3 +1,9 @@
+/*
+ * Created by omrobbie.
+ * Copyright (c) 2018. All rights reserved.
+ * Last modified 11/11/17 3:14 PM.
+ */
+
 package com.omrobbie.favoritemovies.util;
 
 import java.text.DateFormat;

@@ -1,3 +1,9 @@
+/*
+ * Created by omrobbie.
+ * Copyright (c) 2018. All rights reserved.
+ * Last modified 1/24/18 11:39 AM.
+ */
+
 package com.omrobbie.cataloguemovieuiux;
 
 import android.content.Intent;

@@ -1,3 +1,9 @@
+/*
+ * Created by omrobbie.
+ * Copyright (c) 2018. All rights reserved.
+ * Last modified 11/16/17 7:22 AM.
+ */
+
 package com.omrobbie.favoritemovies.adapter;
 
 import android.content.Intent;
